@@ -14,6 +14,9 @@ Entry point for AJAX calls from client
 <b>import.js</b>  
 Script for import NOAA data
 
+<b>/lib</b>  
+Model, controller, and service classes
+
 <b>/assets</b>  
 CSS and images
 
