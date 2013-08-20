@@ -2,6 +2,8 @@ The task given was to build a simple client and server components to display wea
 and a data service. My implementation uses rudimentary routing and an MVC structure on the server side to perform 
 the data fetch. Note that the client is not completely styled and the controls not entirely data driven. 
 
+http://www.lostead.com/weather/view.html
+
 <b>index.html</b>  
 Simple Javascript client
 
