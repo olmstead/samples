@@ -1,7 +1,7 @@
 XML Sorting
 ===========
 Given an XML document with the following schema, produce an ordered list of the steps as a string:
-
+<code>
 <root>
 <instructions>
 <step order="1">Cook spaghetti</step>
@@ -11,9 +11,10 @@ Given an XML document with the following schema, produce an ordered list of the 
 <dish>Pasta</dish>
 </root> 
 
-
+</code>
 INPUT
 =====
+<pre><code>
 <?xml version='1.0'?> 
 <root>
     <instructions>
@@ -23,7 +24,7 @@ INPUT
     </instructions>
     <dish>Pasta</dish>
 </root>
-
+</code></pre>
 OUTPUT
 ======
 Cook spaghetti, Drain from pot, Add Sauce
