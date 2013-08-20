@@ -1,4 +1,5 @@
-####Code Samples
+Code Samples
+-----------------
 This repository contains code samples that I have either provided on request or pulled from a personal project. 
 
 Coding Challenges
