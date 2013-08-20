@@ -9,7 +9,7 @@ Simple coding challenges I have performed in the past.  The solutions are PHP co
 Weather Data Client/Server
 ==========================
 The task given was to build a simple client and server components to display weather data using an AJAX client and a 
-data service.  My implemation uses rudimentary routing and an MVC structure on the server side to perform the data
+data service.  My implementation uses rudimentary routing and an MVC structure on the server side to perform the data
 fetch.  Note that the client is not completely styled and the controls not entirely data driven.  
 
     see the weather directory
