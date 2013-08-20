@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="asssets/normalize.css">
+        <link rel="stylesheet" href="asssets/weather.css">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="weather.js"></script>
+        <script>   
+            // initialize  on load
+            $( function () { 
+                // initialize UI values and setup events
+                // TODO use a cookie for selection stickiness
+                var wban = '23234', year = '2013', month = '05', day = '01';
+                
+                // set selects with initial values
+                $('#select-location').val(wban);
+                $('#select-year').val(year);
+                $('#select-month').val(month);
+                $('#select-day').val(day)
+                
+                // load the weather data
+                Weather.load(wban, year, month, day);
+                
+                // setup events
+                $('#button-reload').on('click', function () {
+                    Weather.load( $('#select-location').val(), $('#select-year').val(), $('#select-month').val(), $('#select-day').val());
+                });
+                
+                $('select').on('change', function () {
+                    Weather.load( $('#select-location').val(), $('#select-year').val(), $('#select-month').val(), $('#select-day').val());
+                });
+            });      
+        </script>       
+    </head>
+    <body>
+        <div id="content">  
+            <div id="image-wrapper">
+                <image src="assets/sfo.jpg"/>
+            </div>
+            <div id="data-wrapper">
+                <div class="v-spacer"></div>
+                <table>
+                    <tr>
+                        <th>MAX</th>
+                        <th>MIN</th>
+                        <th>AVG</th>
+                    </tr>
+                    <tr>
+                        <td id="max-temp"></td>
+                        <td id="min-temp"></td>
+                        <td id="avg-temp"></td>
+                    </tr>
+                </table>        
+            </div>    
+            <div id="controls">
+                
+                <!--- TODO: use data to drive select options -->
+                
+                <label>location:</label>
+                <select id="select-location"> 
+                    <option value='23234'>SFO, San Francisco, CA</option>
+                </select>
+                
+                <label>year:</label>
+                <select id="select-year"> 
+                     <!-- TODO: load dynamically -->
+                    <option value='2013'>2013</option>
+                </select>   
+                
+                <label>month:</label>
+                <select id="select-month"> 
+                    <option value='05'>May</option>
+                </select>    
+                
+                <label>day:</label>
+                <select id="select-day"> 
+                    <!-- TODO: load dynamically by month -->
+                    <option value='01'>1</option>
+                    <option value='02'>2</option>
+                    <option value='03'>3</option>
+                    <option value='04'>4</option>
+                    <option value='05'>5</option>
+                    <option value='06'>6</option>
+                    <option value='07'>7</option>
+                    <option value='08'>8</option>
+                    <option value='09'>9</option>
+                    <option value='10'>10</option>
+                    <option value='11'>11</option>
+                    <option value='12'>12</option>
+                    <option value='13'>13</option>
+                    <option value='14'>14</option>
+                    <option value='15'>15</option>
+                    <option value='16'>16</option>
+                    <option value='17'>17</option>
+                    <option value='18'>18</option>
+                    <option value='19'>19</option>
+                    <option value='20'>20</option>
+                    <option value='21'>21</option>
+                    <option value='22'>22</option>
+                    <option value='23'>23</option>
+                    <option value='24'>24</option>
+                    <option value='25'>25</option>
+                    <option value='26'>26</option>
+                    <option value='27'>27</option>
+                    <option value='28'>28</option>
+                    <option value='29'>29</option>
+                    <option value='30'>30</option>
+                    <option value='31'>31</option>  
+                </select>  
+                <div class="v-spacer"></div>
+                <div><button id="button-reload">Reload Data</button></div>
+            </div>        
+        </div>
+    </body>
+</html>

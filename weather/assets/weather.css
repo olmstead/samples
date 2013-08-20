@@ -1,0 +1,175 @@
+*{margin:0;padding:0}
+
+/* HTML ELEMENTS */
+body{
+    font-size:.75em;
+    font-family:Arial,Helvetica,Sans-Serif;
+    margin:0;
+    padding:0;
+    background-position: center -6.25em;;
+    top: -6.25em;
+    background-color: #222222 ;
+    background-repeat: repeat; 
+    color: white;
+}
+
+a:link{
+    color:#034af3;
+    text-decoration:underline
+}
+a:visited{
+    color:#505abc
+}
+a:hover{
+    color:#1d60ff;
+    text-decoration:none
+}
+a:active{
+    color:#12eb87
+}
+
+p,ul{
+    margin-bottom:1.25em
+}
+h1 {
+    font-size:2.5em;
+    font-size:2em;
+    padding-bottom:0;
+    margin-bottom:0
+}
+h2 {
+    font-size:2em;
+    padding:0 0 .625em
+}
+h3{
+    font-size:1.5em
+}
+h4{
+    font-size:1.2em
+}
+h5,h6{
+    font-size:1em
+}
+.rightColumn>h1,.rightColumn>h2,.leftColumn>h1,.leftColumn>h2{
+    margin-top:0
+}
+legend{
+    font-size:1.1em;
+    font-weight:600;
+    padding:.125em .5em .5em
+}
+
+input:focus
+{
+    border: .063em solid #DFD; 
+}
+label {
+    display: inline-block;
+    text-align: right;
+    margin-left: 20px;
+}
+
+table{
+    border:solid .063em #e8eef4;
+    border-collapse:collapse
+}table td{
+    padding:.313em;
+    border:solid .063em #e8eef4
+}
+table th{padding:.375em .313em;
+         text-align:left;
+         background-color: #eee;
+         color: #222;
+         border:solid .063em #e8eef4
+}
+
+/* HTML5 ELEMENTS */
+header {
+    background-color: #444;
+    min-height: 3.2em; 
+    width: 100%;
+    z-index: 5000;
+    position: relative;
+}
+main {
+    text-align: center; 
+    min-height: 31.25em;
+}
+footer {
+    width:100%; 
+    height: 6.875em;  
+    text-align: center;
+}
+footer .credit {
+    display: inline-block;
+    margin-left: 1.25em;
+}
+footer .credit a {
+    text-decoration: none; 
+    color:#AAAAAA;
+}
+
+nav {
+    float: right;
+    position: relative;
+    margin: .313em 1.875em .313em 1.25em;
+}
+
+/* GENERAL STYLING */
+.shadow-drop {
+    box-shadow: 0 .225em .5em .5em rgba(10, 10, 10, 0.25);
+}
+.v-spacer {
+    height: 2.5em;
+}
+.clear{ clear:both }
+
+.error{ color:Red }
+
+.success{ font-size: 1.5em }
+
+#content-wrapper {
+    margin: 0 auto ;
+}
+
+#content {
+    width: 800px;
+    margin: 0 auto ;
+}
+#image-wrapper {
+    display: inline-block;
+}
+#data-wrapper {
+    display: inline-block;
+}
+
+#data-wrapper .v-spacer {
+    height: 200px;
+}
+#data-wrapper table {
+    height: 100%;
+    height: 267px;
+}
+
+#data-wrapper th,
+#data-wrapper td{
+    text-align: center;
+    vertical-align: middle;
+   
+}
+#data-wrapper th {
+    height: 60px;
+    background-color: #BBB;
+    font-size: 2em;
+}
+#data-wrapper td {
+    height: 100%;
+    width: 110px;
+    font-size: 2em;
+}
+
+#controls {
+    width: 580px;
+    margin: 20px 0 20px 0;
+    text-align: center;
+}
