@@ -3,10 +3,15 @@ Puzlr: A social image based mobile game
 
 Puzlr is a mobile application in progress.  Since it is a fully self-created project, it serves as a
 good example of the kind of technology and code that excites me.  Rather than post the entire project, I have included
-code samples that I hope illustrate the simplicity and the application architecture.
+code samples that I hope illustrate the simplicity and potential power of the architecture.
 
 The client is a mobile app for IOS and Android that is built using the cross-platform Titanium framework from 
 Appcelerator.  The server is built in PHP using Symfony with MongoDB as the data store. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Screen shot](http://farm3.staticflickr.com/2832/9558407205_99c8fd2598_m.jpg "")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Screen shot](http://farm8.staticflickr.com/7451/9558407309_b3f3abc7de_m.jpg "")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Screen shot](http://farm4.staticflickr.com/3763/9561193304_d665eedee8_m.jpg "")
 
 Mobile Client
 -------------
@@ -18,6 +23,8 @@ development environment.  The ListView component is used to display large lists 
 The alloy framework has allowed me to rapidly create some powerful features when tied to a backend services, and Backbone
 acts as the glue that really makes that happen. 
 
+Data is passed as JSON bewteen the mobile client and REST based services.  
+
 Server Application
 -----------------
 The server component is built using the Symfony framework for PHP.  Symfony provides an excellent security layer based
@@ -26,14 +33,18 @@ is based largely on Rails and which is highly efficient and customizable.
 
 Persistence
 ------------
-Data persistence is implemented using the Doctrine ODM to connect to a MongoDB store.  Image files are stored using 
-Amazon S3 and are served to mobile devices via the cloud. 
+Data persistence is implemented using the Doctrine ODM to connect to a MongoDB store.  Monogo was a good fit as the
+data stored does not require complex relationships and it made for rapid development without the need to version
+schemas.  
+
+Image files are stored at Amazon S3 on upload and are served to mobile devices via the cloud which means the app
+server only needs to serve up data.
 
 Security
 ---------
 For security users can login via Facebook or register as a user of the app.  This is handled in Symfony using
-a security provider changing feature.  Since the Facebook connection is established using the Titanium libraries
-on the client, there has been some work required to facilitate passing of OAuth credentials to the server.
+a security provider chaining feature.  Since the Facebook connection is established using the Titanium libraries
+on the client, there has been considerable customization work required to facilitate passing of OAuth credentials to the server.
 
 Code Details
 ------------
@@ -146,7 +157,7 @@ to work this way, writing code quickly, getting a prototype working, then fillin
     }
 ```
 Here we fetch the puzzles from mongo, do a simple serialization, and return the response based on the format.
-In Symfony, this could clean up by creating a response listener class that would handle the difference in the 
+Using Symfony, this could cleaned up by creating a response listener class that would handle the difference in the 
 response based on the format so that each action would be simpler.
 
 In the case that the HTML format is requested, a feature I often use for debugging, the @Template annotation tells 
