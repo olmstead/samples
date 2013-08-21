@@ -18,6 +18,8 @@ development environment.  The ListView component is used to display large lists 
 The alloy framework has allowed me to rapidly create some powerful features when tied to a backend services, and Backbone
 acts as the glue that really makes that happen. 
 
+Data is passed as JSON bewteen the mobile client and REST based services.  
+
 Server Application
 -----------------
 The server component is built using the Symfony framework for PHP.  Symfony provides an excellent security layer based
