@@ -146,7 +146,7 @@ to work this way, writing code quickly, getting a prototype working, then fillin
     }
 ```
 Here we fetch the puzzles from mongo, do a simple serialization, and return the response based on the format.
-In Symfony, this could clean up by creating a response listener class that would handle the difference in the 
+Using Symfony, this could cleaned up by creating a response listener class that would handle the difference in the 
 response based on the format so that each action would be simpler.
 
 In the case that the HTML format is requested, a feature I often use for debugging, the @Template annotation tells 
