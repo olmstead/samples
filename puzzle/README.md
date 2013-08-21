@@ -8,6 +8,11 @@ code samples that I hope illustrate the simplicity and potential power of the ar
 The client is a mobile app for IOS and Android that is built using the cross-platform Titanium framework from 
 Appcelerator.  The server is built in PHP using Symfony with MongoDB as the data store. 
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Screen shot](http://farm3.staticflickr.com/2832/9558407205_99c8fd2598_m.jpg "")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Screen shot](http://farm8.staticflickr.com/7451/9558407309_b3f3abc7de_m.jpg "")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Screen shot](http://farm4.staticflickr.com/3763/9561193304_d665eedee8_m.jpg "")
+
 Mobile Client
 -------------
 The mobile client is built using a new client side MVC framework for Titanium called Alloy that is built using 
