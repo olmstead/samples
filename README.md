@@ -9,9 +9,10 @@ Titanium (Javascript, Backbone, jQuery), PHP (Symfony, Doctrine), MongoDB, Faceb
 
 [see the puzzle directory](https://github.com/olmstead/samples/tree/master/puzzle)
 
-Coding Challenges
+Simple Challenges
 -----------------
-Simple coding challenges I have performed in the past.  The solutions are PHP command line executable scripts.
+<b>Coding Challenge</b><br>
+Simple coding challenges. Solutions are PHP command line executable scripts.
 
 [see the challenges directory](https://github.com/olmstead/samples/tree/master/challenges)
 
