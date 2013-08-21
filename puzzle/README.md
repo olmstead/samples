@@ -28,8 +28,12 @@ is based largely on Rails and which is highly efficient and customizable.
 
 Persistence
 ------------
-Data persistence is implemented using the Doctrine ODM to connect to a MongoDB store.  Image files are stored using 
-Amazon S3 and are served to mobile devices via the cloud. 
+Data persistence is implemented using the Doctrine ODM to connect to a MongoDB store.  Monogo was a good fit as the
+data stored does not require complex relationships and it made for rapid development without the need to version
+schemas.  
+
+Image files are stored at Amazon S3 on upload and are served to mobile devices via the cloud which means the app
+server only needs to serve up data.
 
 Security
 ---------
