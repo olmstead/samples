@@ -32,7 +32,7 @@ Amazon S3 and are served to mobile devices via the cloud.
 Security
 ---------
 For security users can login via Facebook or register as a user of the app.  This is handled in Symfony using
-a security provider changing feature.  Since the Facebook connection is established using the Titanium libraries
+a security provider chaining feature.  Since the Facebook connection is established using the Titanium libraries
 on the client, there has been some work required to facilitate passing of OAuth credentials to the server.
 
 Code Details
