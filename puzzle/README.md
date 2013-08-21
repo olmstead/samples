@@ -79,8 +79,9 @@ Security
 For security users can login via Facebook or register as a user of the app.  This is handled in Symfony using
 a security provider chaining feature.  Since the Facebook connection is established using the Titanium libraries
 on the client, there has been considerable customization work required to facilitate passing of OAuth credentials to the server.
-        $user = $this->findUserByFbId($username);
+        
 ```php
+	$user = $this->findUserByFbId($username);
         // get fb user data
         try {
             $fbUserData = $this->facebook->api('/me');
