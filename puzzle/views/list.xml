@@ -1,0 +1,25 @@
+<!--  
+    Copyright (c) 2013 John Olmstead, All Rights Reserved
+    <author>john olmstead</author> 
+    <email>john.olmstead@gmail.com/email>
+    <date>2013</date>
+!-->
+<Alloy>
+    <Collection id="puzzles" src="puzzle" instance="true" />
+    <View  id="puzzle_list_wrapper">
+        <ActivityIndicator id="activityIndicator" />
+        <Label id="labelNoRecords" />
+        <ListView id="puzzle_list" onItemclick="onPuzzleClick" defaultItemTemplate="itemTemplate">
+            <Templates>
+                <Require src="itemTemplate"/>
+            </Templates>
+            <ListSection id="recent_puzzles" dataCollection="$.puzzles">
+                <ListItem root:id="{id}" 
+                          guesses:text="{guesses}"  
+                          days:text="{days" 
+                          points:text="{points}" 
+                          imageview:image="{url}"/>
+            </ListSection>
+        </ListView>	
+    </View>
+</Alloy>

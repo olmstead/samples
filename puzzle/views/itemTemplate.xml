@@ -1,0 +1,36 @@
+<!--  
+    Copyright (c) 2013 John Olmstead, All Rights Reserved
+    <author>john olmstead</author> 
+    <email>john.olmstead@gmail.com/email>
+    <date>2013</date>
+!-->
+
+<Alloy>
+    <ItemTemplate name="itemTemplate" 
+                      width="320" height="420"  
+                      layout="vertical"
+                      selectionStyle="0"
+                      bindId="root">
+			
+        <View layout="vertical" width="auto" height="420">
+							    		
+            <View width="auto" height="320" >
+                <ImageView top="0" left="0" bindId="imageview" image="" width="320" height="320" />
+            </View>					    
+			
+            <View width="100%" height="52">			    			
+                <View top="4" right="0" height="100%" width="auto" backgroundColor="transparent" layout="vertical">	
+                    <Label width="auto" bindId="guesses" class="points"  left="6" height="32">22</Label>				
+                    <Label width="auto" left="8" top="-4" height="16">guesses</Label>
+                </View>
+	
+                <View top="4" right="0" height="100%" width="auto" backgroundColor="transparent" layout="vertical">	
+                    <Label width="auto" bindId="points" class="points"  right="6" height="32" text="100"/>				
+                    <Label width="auto" right="8" top="-4" height="16">points</Label>
+                </View>/>
+	
+            </View>
+            <View class="banner" width="320" height="50"></View> 		
+        </View>	
+    </ItemTemplate>
+</Alloy> 
