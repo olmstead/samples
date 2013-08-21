@@ -3,7 +3,7 @@ Puzlr: A social image based mobile game
 
 Puzlr is a mobile application in progress.  Since it is a fully self-created project, it serves as a
 good example of the kind of technology and code that excites me.  Rather than post the entire project, I have included
-code samples that I hope illustrate the simplicity and the application architecture.
+code samples that I hope illustrate the simplicity and potential power of the architecture.
 
 The client is a mobile app for IOS and Android that is built using the cross-platform Titanium framework from 
 Appcelerator.  The server is built in PHP using Symfony with MongoDB as the data store. 
