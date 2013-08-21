@@ -40,13 +40,77 @@ schemas.
 Image files are stored at Amazon S3 on upload and are served to mobile devices via the cloud which means the app
 server only needs to serve up data.
 
+The code below illustrates persisting data taken from a form as two document types and storing the image
+binary using Amazon S3.
+```php
+	// create a new puzzle model 
+        $puzzle = new Puzzle();
+        $form = $this->createForm(new PuzzleType(), $puzzle);
+        
+        // process posted form data
+        if ($request->isMethod('POST')) {
+            $form->bind($request);
+            if ($form->isValid()) {
+                // get the uploaded image 
+                $upload = $puzzle->getImageFile();
+                
+                // get the amazon s3 base url
+                $host = $this->container->getParameter('jpo_storage.amazon_s3.base_url');
+                
+                // upload the file to s3 and get the filename
+                $filename = $this->getPhotoUploader()->upload($upload);
+                
+                // build the s3 url for the ikmaage
+                $url = "http://$host/$filename";
+                
+                // create persistent storage for the image and save in mongo
+                $image = new Image($url, $upload->getClientOriginalName());
+                $puzzle->setImage($image);
+                $dm = $this->get('doctrine.odm.mongodb.document_manager');
+                $dm->persist($image);
+                $dm->persist($puzzle);
+                $dm->flush();
+            } 
+       }
+```
+
 Security
 ---------
 For security users can login via Facebook or register as a user of the app.  This is handled in Symfony using
 a security provider chaining feature.  Since the Facebook connection is established using the Titanium libraries
 on the client, there has been considerable customization work required to facilitate passing of OAuth credentials to the server.
+        $user = $this->findUserByFbId($username);
+```php
+        // get fb user data
+        try {
+            $fbUserData = $this->facebook->api('/me');
+        } catch (FacebookApiException $e) {
+            $fbUserData = null;
+        }
 
-Code Details
+        if (!empty($fbUserData)) {
+            // create a new user if needed
+            if (empty($user)) {
+                $user = $this->userManager->createUser();
+                $user->setEnabled(true);
+                $user->setPassword('');
+            }
+            // set the fb data forr the user
+            $user->setFBData($fbUserData);
+
+            if (count($this->validator->validate($user, 'Facebook'))) {
+                // TODO: the user was found obviously, but doesnt match our expectations, do something smart
+                throw new UsernameNotFoundException('The facebook user could not be stored');
+            }
+            $this->userManager->updateUser($user);
+        }
+
+        if (empty($user)) {
+            throw new UsernameNotFoundException('The user is not authenticated on facebook');
+        }
+```
+
+Puzzle list Fetch
 ------------
 Below I follow how a list of photo puzzles from the client implementation to the server implementation.
 
